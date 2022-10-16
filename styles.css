@@ -1,0 +1,327 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@500;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --Desaturated-Dark-Cyan: hsl(180, 29%, 50%);
+    --Light-Grayish-Cyan-Background: hsl(180, 52%, 96%);
+    --Light-Grayish-Cyan: hsl(180, 31%, 95%);
+    --Dark-Grayish-Cyan: hsl(180, 8%, 52%);
+    --Very-Dark-Grayish-Cyan: hsl(180, 14%, 20%);
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Spartan", sans-serif;
+    font-size: 15px;
+    background-color: var(--Light-Grayish-Cyan-Background);
+}
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+header img {
+    width: 100%;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.item {
+    position: relative;
+    box-shadow: 0 .25em .75rem rgba(0,0,0,.1),
+                0 .25em .75rem rgba(0,0,0,.1);
+    padding: 2rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item .info, .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.wrapper {
+    flex-direction: column;
+    margin-left: 15px;
+    justify-content: start;
+}
+
+@media (max-width: 570px) {
+    .item {
+        flex-direction: column;
+    }
+    .languages {
+        padding: .5rem 0;
+        margin-top: 10px;
+        width: 100%;
+        border-top: 3px solid var(--Light-Grayish-Cyan);
+    }
+
+    .img {
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        transform: translateY(-50%);
+    }
+
+    .item {
+        margin-top: 50px !important;
+    }
+
+    .img img {
+        width: 75%;
+    }
+
+    .info, .wrapper  {
+        width: 100%;
+    }
+
+    .wrapper {
+        margin-top: 10px;
+    }
+
+    .lang {
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+
+.wrapper > * {
+    width: 100%;
+    text-align: left;
+}
+
+.wrapper > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.position {
+    font-size: 1.15rem;
+    font-weight: bolder;
+    color: var(--Very-Dark-Grayish-Cyan);
+    cursor: pointer;
+    transition: color .3s ease-in-out;
+}
+
+.position:hover {
+    color: var(--Desaturated-Dark-Cyan);
+}
+
+.company {
+    color: var(--Desaturated-Dark-Cyan);
+    font-weight: bold;
+}
+
+.bottom {
+    font-size: .9em;
+    color: var(--Dark-Grayish-Cyan);
+}
+
+.top > *:not(:last-child), .lang:not(:last-child) {
+    margin-right: 10px;
+}
+
+.top > * {
+    display: inline-block;
+}
+
+.item.featured {
+    border-left: 5px solid var(--Desaturated-Dark-Cyan);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.item:not(:first-of-type) {
+    margin-top: 20px;
+}
+
+.new {
+    background-color: var(--Desaturated-Dark-Cyan);
+}
+
+.featured:not(.item) {
+    background-color: var(--Very-Dark-Grayish-Cyan);
+}
+
+.new, .featured:not(.item) {
+    font-weight: normal;
+    border-radius: 50px;
+    color: white;
+    text-transform: uppercase;
+    max-width: max-content;
+    padding: .25rem .5rem;
+    font-size: .65em;
+}
+
+.lang, .search .search-item {
+    display: inline-block;
+    background-color: var(--Light-Grayish-Cyan);
+    color: var(--Desaturated-Dark-Cyan);
+    font-size: .9em;
+    font-weight: bold;
+    padding: .5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.lang:hover {
+    background-color: var(--Desaturated-Dark-Cyan);
+    color: white;
+}
+
+.search {
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 .25em .75rem rgba(0,0,0,.1),
+    0 .25em .75rem rgba(0,0,0,.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search .items {
+    padding: 2rem 1rem;
+}
+
+.search .search-item > * {
+    display: inline-block;
+    padding: .5rem;
+}
+
+.search .search-item {
+    padding: 0;
+    cursor: default;
+}
+
+.search .search-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.search .search-item .remove {
+    color: white;
+    background-color: var(--Desaturated-Dark-Cyan);
+    font-weight: bold;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+.search .search-item .remove:hover {
+    background-color: black;
+}
+
+.search .clear, .search .add {
+    color: var(--Desaturated-Dark-Cyan);
+    cursor: pointer;
+    font-size: .8em;
+}
+
+.search .clear:hover, .search .add:hover {
+    text-decoration: underline;
+}
+
+.search .add {
+    margin-right: 10px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,.25);
+    z-index: 2;
+}
+
+.modal .modal-dialog {
+    position: fixed;
+    height: max-content;
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 6px;
+    background-color: white;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal .modal-dialog > * {
+    padding: 1rem;
+}
+
+.modal .modal-dialog .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid rgba(0,0,0,.25);
+}
+
+.modal .modal-dialog .modal-header .close_modal {
+    font-size: 1.75rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal .modal-dialog .modal-body input {
+    width: 85%;
+    border: 2px solid var(--Light-Grayish-Cyan);
+    padding: .5rem .75rem;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.modal .modal-dialog .modal-body input:focus {
+    box-shadow: 0 0 .25em black;
+}
+
+.modal .modal-dialog .modal-body button {
+    border-radius: 6px;
+    padding: .5rem .75rem;
+    background-color: #dc3545;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal .modal-dialog .modal-body button:hover {
+    opacity: .85;
+}
+
+input, button {
+    outline: none;
+    border: none;
+}
+
+.search .buttons {
+    padding: 1rem 2rem;
+}
+
+.search .buttons > * {
+    display: inline-block;
+}
+
+@media (max-width: 570px) {
+    .modal .modal-dialog {
+        width: 90%;
+    }
+}
